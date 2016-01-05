@@ -1,0 +1,129 @@
+<div class="container">
+	<h2 class="text-left">{{'aboutme_html_title' | translate}}</h2>
+	<div class="alert alert-success">
+		<p>{{'person_info' | translate}}</p>
+		<p>{{'page_skill' | translate}}<a target="_blank" ng-href="{{'page_url' | translate}}">{{'page_url' | translate}}</a></p>
+	</div>
+	<div class="well">
+		<blockquote>
+			<p class="lead">{{'aboutme_html_desc_1' | translate}}</p>
+		</blockquote>
+		<blockquote>
+			<p class="lead">{{'aboutme_html_desc_2' | translate}}</p>
+		</blockquote>
+		<blockquote>
+			<p class="lead">{{'aboutme_html_desc_3' | translate}}</p>
+		</blockquote>
+		<blockquote>
+			<p class="lead">{{'aboutme_html_desc_4' | translate}}</p>
+		</blockquote>
+	</div>
+	<h2 class="text-left">{{'aboutme_html_mySkills' | translate}}</h2>
+	<div class="panel panel-info">
+		<div class="panel-heading">
+			<h3 class="panel-title">{{'skill_languages_title' | translate}}</h3>
+		</div>
+		<div class="panel-body" id="skill_languages_title">
+		</div>
+	</div>
+	
+	<div class="panel panel-info">
+		<div class="panel-heading">
+			<h3 class="panel-title">{{'skill_framework_title' | translate}}</h3>
+		</div>
+		<div class="panel-body" id="skill_framework_title">
+		</div>
+	</div>
+	
+	<div class="panel panel-info">
+		<div class="panel-heading">
+			<h3 class="panel-title">{{'skill_tools_title' | translate}}</h3>
+		</div>
+		<div class="panel-body" id="skill_tools_title">
+		</div>
+	</div>
+
+	<h3>{{'skill_project_title' | translate}}</h3>
+	<div class="panel panel-default" ng-repeat='company in projects'>
+		<!-- Default panel contents -->
+		<div class="panel-heading">{{company.company | translate}}</div>
+		<div class="panel-body" ng-repeat='project in company.projects'>
+			<p>{{$index+1}}. {{project.name | translate}}</p>
+			<table class="table">
+			<thead>
+				<tr>
+					<th class="col-md-2">属性</th>
+					<th>描述</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>项目名称</td>
+					<td>{{project.name | translate}}</td>
+				</tr>
+				<tr>
+					<td>项目历时</td>
+					<td>{{project.time | translate}}</td>
+				</tr>
+				<tr>
+					<td>开发环境</td>
+					<td>{{project.env | translate}}</td>
+				</tr>
+				<tr>
+					<td>使用框架</td>
+					<td>{{project.framework | translate}}</td>
+				</tr>
+				<tr>
+					<td>成员</td>
+					<td>{{project.coder | translate}}</td>
+				</tr>
+				<tr>
+					<td>项目内容</td>
+					<td>{{project.desc | translate}}</td>
+				</tr>
+				<tr>
+					<td>项目职责</td>
+					<td>{{project.task | translate}}</td>
+				</tr>
+			</tbody>
+			</table>
+		</div>
+	</div>
+
+	<h3>{{'favorite_website' | translate}}</h3>
+	<div class="panel panel-default">
+		<!-- Default panel contents 
+		<div class="panel-heading">{{'favorite_website' | translate}}</div>-->
+		<div class="panel-body">
+			<p>{{'favorite_website_desc' | translate}}</p>
+		</div>
+		<table class="table">
+			<thead>
+				<tr>
+					<th class="col-md-2">{{'favorite_website_site_head' | translate}} </th>
+					<th>{{'favorite_website_desc_head' | translate}}</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="site in websites">
+					<td><a ng-href="{{site.site}}">{{site.site}}</a></td>
+					<td>{{site.desc | translate}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+</div>
+<script>
+(function(){
+	var skill_languages_seletor = "div#skill_languages_title";
+	PersonalData.drawLanguagesChart(PersonalData.getSkillDataOfLanguages(),skill_languages_seletor);
+
+	var skill_framework_seletor = "div#skill_framework_title";
+	PersonalData.drawFrameworkChart(PersonalData.getSkillDataOfFramework(),skill_framework_seletor);
+
+	var skill_tools_title = "div#skill_tools_title";
+	PersonalData.drawFrameworkChart(PersonalData.getSkillDataOfTools(),skill_tools_title);
+
+})()
+</script>

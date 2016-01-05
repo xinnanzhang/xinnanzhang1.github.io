@@ -1,0 +1,77 @@
+html,body { 
+	padding-top: 25px;
+    height: 100%;
+}
+.full-height{
+	max-height: 100%;
+    min-height: 100%;
+    height: 100%;
+}
+.home-body{
+    background-image:url("../image/bg.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    overflow:auto;
+    color:white;
+}
+.home-heading{
+    font-family: "Josefin Slab Bold";
+    font-size: 3.5em
+}
+.home-hide{
+    display: none !important
+}
+.home-content {
+    padding-top: 125px;
+}
+/**
+50% -> 10%
+*/
+.home-avatar {
+    -webkit-border-radius: 10%;
+    -moz-border-radius: 10%;
+    -ms-border-radius: 10%;
+    -o-border-radius: 10%;
+    border-radius: 10%;
+    display: -moz-inline-stack;
+    display: inline-block;
+    vertical-align: middle;
+    zoom: 1;
+    border: 20px solid rgba(0, 0, 0, 0.1);
+}
+/**
+225 -> 25
+*/
+.home-avatar img{
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    -ms-border-radius: 25px;
+    -o-border-radius: 25px;
+    border-radius: 25px;
+    width: 100%;
+}
+.contact-body{
+    background-image:url("../image/bg.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    overflow:auto;
+    color:white;
+}
+.contact-image-connact{
+	width:100%;
+	height:300px;
+}
+
+.chart div {
+  font: 10px sans-serif;
+  background-color: steelblue;
+  text-align: right;
+  padding: 3px;
+  margin: 1px;
+  color: white;
+}
+
+.chart rect{
+    stroke:white;
+    fill:steelblue;
+}
